@@ -65,7 +65,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "boilerplate-frontend-orion-bootcamp:build:production"
+              "browserTarget": "boilerplate-frontend-orion-bootcamp:build:production",
+              "disableHostCheck": true
             },
             "development": {
               "browserTarget": "boilerplate-frontend-orion-bootcamp:build:development"
