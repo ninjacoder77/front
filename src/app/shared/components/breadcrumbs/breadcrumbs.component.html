@@ -1,0 +1,13 @@
+<nav class="nav">
+  <ng-container *ngFor="let breadcrumb of breadcrumbs; last as last">
+    <ng-container *ngIf="!last">
+      <a class="nav__link" [routerLink]="breadcrumb.url">
+        {{ breadcrumb.label }}
+      </a>
+      <mat-icon class="nav__icon">navigate_next</mat-icon>
+    </ng-container>
+    <ng-container *ngIf="last">
+      {{ breadcrumb.label }}
+    </ng-container>
+  </ng-container>
+</nav>

@@ -1,0 +1,27 @@
+/* Breakpoints */
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-small-desktop: 992px;
+$breakpoint-large-desktop: 1200px;
+
+/* Cores */
+$primary-color: #65558f;
+$primary-color-200: rgba($primary-color, 0.15);
+$error-color: #d63a32;
+
+/* Inputs */
+$input-label-color: #fef7ff;
+$input-placeholder-color: #cac4d0;
+
+/* Sidebar */
+$sidebar-bg-color: #dbd5e9;
+$sidebar-active-color: #9354bc;
+
+/* Card */
+$card-bg-color-default: #b8add4;
+$card-bg-color-light: #f4f0fe;
+$card-bg-color-dark: #e4dcf7;
+
+/* Links */
+$link-color: #2c75fb;
+$link-hover-color: darken($link-color, 10%);

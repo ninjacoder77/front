@@ -1,0 +1,7 @@
+@import "variables";
+
+@media screen and (max-width: $breakpoint-mobile) {
+  ::ng-deep .mat-mdc-paginator-range-label {
+    margin: 0 0.5rem 0 0 !important;
+  }
+}

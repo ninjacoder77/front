@@ -1,0 +1,28 @@
+<section class="section">
+  <div class="section__nav-container">
+    <app-return-button routerLink="/administrador" />
+    <app-breadcrumbs />
+  </div>
+
+  <header class="section__header">
+    <h2 class="section__title">{{ sectionTitle }}</h2>
+    <app-searchbar (search)="onSearch($event)" />
+  </header>
+
+  <ng-container *ngFor="let item of paginatedItems; index as i">
+    <div [ngClass]="{ even: i % 2 === 0 }" class="card">
+      <p class="card__description">
+        <strong>{{ item.title }}</strong>
+        <small>{{ item.subtitle }}</small>
+      </p>
+
+      <app-action-menu [itemId]="item.id" />
+    </div>
+  </ng-container>
+
+  <p *ngIf="totalItems === 0">Não há nenhum item para ser exibido.</p>
+
+  <footer class="section__footer">
+    <app-pagination [length]="totalItems" />
+  </footer>
+</section>

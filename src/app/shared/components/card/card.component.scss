@@ -1,0 +1,25 @@
+@import "variables";
+
+:host {
+  max-width: 30rem;
+}
+
+.card {
+  display: inline-block;
+  background-color: $card-bg-color-default;
+  border-radius: 1.2rem;
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem 1rem;
+  max-width: 30rem;
+
+  &__image {
+    object-fit: cover;
+  }
+
+  &__button {
+    background: #fff;
+    border-radius: 99rem;
+    flex: 1;
+    margin-inline: 0.8rem;
+  }
+}

@@ -1,0 +1,18 @@
+<app-image-action-panel
+  imageUrl="/assets/parents-image.webp"
+  imageDescription="Uma família está caminhando por um caminho pavimentado. O pai está à frente, do lado esquerdo da imagem, olhando para a menina que está de bicicleta. A mãe está à direita, também observando a menina, que sorri enquanto pedala uma bicicleta amarela com guidões azuis. A mãe a ajuda segurando o assento da bicicleta. O pai também sorri. Todos parecem estar se divertindo ao ar livre."
+>
+  <p>
+    Olá, responsável! <br />
+    Aproveite a nossa ferramenta para acompanhar o desenvolvimento pessoal do
+    seu filho(a)!
+  </p>
+
+  <form [formGroup]="form" (submit)="onSubmit($event)" panel>
+    <app-input
+      [control]="form.controls.studentAdmissionId"
+      placeholder="Número da matrícula do estudante"
+    />
+    <app-button type="submit" label="Entrar" />
+  </form>
+</app-image-action-panel>

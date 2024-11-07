@@ -1,0 +1,47 @@
+@import "mixins";
+@import "variables";
+
+.search {
+  @include center-flex($justify: space-between);
+  background-color: $primary-color-200;
+  border-radius: 9rem;
+  margin-inline-start: auto;
+  overflow: hidden;
+  height: 4.5rem;
+  width: 4.5rem;
+  transition: width 0.2s linear;
+
+  &__input {
+    all: unset;
+    width: 0;
+  }
+
+  &.active,
+  &.search--desktop {
+    width: 100%;
+
+    .search__input {
+      text-align: left;
+      width: 100%;
+    }
+  }
+}
+
+.search--desktop {
+  max-width: 30rem;
+  display: none;
+
+  .search__input {
+    padding-inline: 2.5rem;
+  }
+}
+
+@media screen and (min-width: $breakpoint-small-desktop) {
+  .search--mobile {
+    display: none;
+  }
+
+  .search--desktop {
+    display: flex;
+  }
+}

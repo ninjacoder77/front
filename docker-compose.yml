@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+    orion-bootcamp-front-end:
+        container_name: real-madruga-civitas
+        image: real-madruga-civitas
+        build:
+            context: .
+            dockerfile: Dockerfile
+        volumes:
+            - .:/app
+            - /app/node_modules
+        ports:
+            - 4200:4200
+            - 9876:9876
+        restart: unless-stopped

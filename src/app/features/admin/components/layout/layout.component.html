@@ -1,0 +1,10 @@
+<app-toolbar *ngIf="isMobile" (menuClick)="toggleSidenav()" />
+<app-sidebar
+  [mode]="isMobile ? 'over' : 'side'"
+  [isSidenavOpen]="isSidenavOpen"
+  (closeSidenav)="handleSidenavClose()"
+>
+  <main class="main">
+    <router-outlet></router-outlet>
+  </main>
+</app-sidebar>

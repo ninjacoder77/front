@@ -1,0 +1,18 @@
+<app-image-action-panel
+  imageUrl="/assets/teacher-image.webp"
+  imageDescription='Uma professora vestindo uma blusa azul e um colar está em frente a um quadro branco que diz "Quantas perguntas você completa diariamente?" Ela segura um marcador e observa atentamente o quadro, como se estivesse prestes a fazer uma anotação ou explicar algo aos alunos. Atrás dela, na parede, há um gráfico colorido do alfabeto, que adiciona um toque educativo ao ambiente. A expressão da professora é animada e engajada, refletindo seu entusiasmo pelo ensino e pela interação com a turma.'
+>
+  <p>
+    Olá, professor(a)! <br />
+    Aproveite a nossa ferramenta para aprimorar o desenvolvimento pessoal dos
+    seus estudantes!
+  </p>
+
+  <form [formGroup]="form" (submit)="onSubmit($event)" panel>
+    <app-input
+      [control]="form.controls.teacherAdmissionId"
+      placeholder="Número da matrícula do professor"
+    />
+    <app-button type="submit" label="Entrar" />
+  </form>
+</app-image-action-panel>

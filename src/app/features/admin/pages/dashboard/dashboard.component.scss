@@ -1,0 +1,29 @@
+@import "variables";
+
+.section {
+  max-width: $breakpoint-small-desktop;
+
+  &__title {
+    font-size: clamp(2.8rem, (1rem + 3vw), 4.5rem);
+    line-height: 1.2;
+  }
+
+  &__description {
+    max-width: 70rem;
+  }
+
+  &__button {
+    display: block;
+    background: #6650a425;
+    background: mix($primary-color, transparent, 20%);
+    border-radius: 99rem;
+    color: #222;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-block-end: 7rem;
+
+    strong {
+      color: $primary-color;
+    }
+  }
+}

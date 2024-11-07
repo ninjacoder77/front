@@ -1,0 +1,85 @@
+@use "@angular/material" as mat;
+@include mat.core();
+
+/* Soft reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Cada REM vai ter o valor de 10px com essa config */
+html {
+  font-size: 62.5%;
+}
+
+/* Tipografia */
+$typography-config: mat.define-typography-config(
+  $headline-5: /* Usado para o h1 */
+    mat.define-typography-level(
+      clamp(4rem, (1rem + 5vw), 4.5rem),
+      5rem,
+      700,
+      $font-family: "Inter, Roboto, sans-serif"
+    ),
+  $headline-6: /* Usado para o h2 */
+    mat.define-typography-level(
+      clamp(3.5rem, (1rem + 6vw), 4.5rem),
+      5rem,
+      500,
+      $font-family: "Inter, Roboto, sans-serif"
+    ),
+  $body-2: mat.define-typography-level(1.6rem, 2.5rem, 400)
+    /* Parágrafos em geral */,
+);
+
+/* Paleta de cor principal */
+$primary-palette: mat.define-palette(
+  (
+    50: #faf8ff,
+    100: #f3edf7,
+    200: #dbd5e9,
+    300: #c0b5d8,
+    400: #9b90b6,
+    500: #65558f,
+    600: #5a4b7f,
+    700: #4d416c,
+    800: #3d3355,
+    900: #251f34,
+    contrast: (
+      50: black,
+      100: black,
+      200: black,
+      300: black,
+      400: black,
+      500: white,
+      600: white,
+      700: white,
+      800: white,
+      900: white,
+    ),
+  )
+);
+/* Paleta de cor secundária */
+$accent-palette: mat.define-palette(mat.$blue-palette);
+$light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary-palette,
+      accent: $accent-palette,
+    ),
+    typography:
+      mat.define-typography-config(
+        $font-family: "Roboto, Arial, sans-serif",
+      ),
+    density: 0,
+  )
+);
+
+@include mat.typography-hierarchy($typography-config);
+@include mat.all-component-themes($light-theme);

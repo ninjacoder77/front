@@ -1,0 +1,78 @@
+@import "variables";
+@import "mixins";
+
+.section {
+  max-width: $breakpoint-large-desktop;
+  margin: 0 auto;
+
+  &__header {
+    @include center-flex($justify: space-between);
+    margin-block: 2rem;
+  }
+
+  &__nav-container {
+    @include center-flex(column);
+    align-items: flex-start;
+    margin-block: 4rem;
+    gap: 1rem;
+
+    app-return-button {
+      margin-left: -1.5rem;
+    }
+  }
+
+  &__title {
+    text-wrap: nowrap;
+    margin: 0;
+  }
+
+  .section__footer {
+    justify-self: center;
+  }
+
+  @media screen and (max-width: $breakpoint-small-desktop) {
+    &__title {
+      text-wrap: wrap;
+    }
+
+    &__header {
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: flex-end;
+
+      .section__title {
+        flex-basis: 100%;
+        order: 2;
+      }
+
+      app-searchbar {
+        flex: 1;
+      }
+    }
+  }
+}
+
+.card {
+  @include center-flex($justify: space-between);
+  background-color: $card-bg-color-light;
+  margin-block-end: 1rem;
+  padding: 2.5rem 0.5rem 2.5rem 2rem;
+
+  &.even {
+    background-color: $card-bg-color-dark;
+  }
+
+  &__description {
+    @include center-flex(column);
+    align-items: flex-start;
+    margin: 0;
+
+    strong {
+      font-weight: normal;
+    }
+
+    small {
+      color: #49454f;
+    }
+  }
+}

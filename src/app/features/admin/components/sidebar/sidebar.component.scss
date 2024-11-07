@@ -1,0 +1,68 @@
+@import "variables";
+
+.sidebar-container {
+  position: relative;
+  background: transparent;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .sidebar {
+    position: fixed;
+    background: $sidebar-bg-color;
+    text-align: center;
+    width: 14rem;
+
+    &__brand {
+      background-color: #fff;
+    }
+  }
+
+  .list {
+    margin-block-start: 9rem;
+    user-select: none;
+
+    .item {
+      height: 10.5rem;
+
+      &.active {
+        position: relative;
+        background: mix($sidebar-active-color, transparent, 10%);
+
+        .item__icon,
+        .item__label {
+          color: $sidebar-active-color;
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          background: $sidebar-active-color;
+          border-radius: 3px 0 0 3px;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          width: 3px;
+        }
+      }
+    }
+
+    .item__icon {
+      display: block;
+      font-size: 4.7rem;
+      height: 4.7rem;
+      width: 100%;
+    }
+  }
+
+  .logout {
+    font-size: 1.7rem;
+    padding: 3rem;
+    margin-block: auto 5rem;
+  }
+}
+
+::ng-deep .mat-drawer-inner-container {
+  display: flex;
+  flex-direction: column;
+}

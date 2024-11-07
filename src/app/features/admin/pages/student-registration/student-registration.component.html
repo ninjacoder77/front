@@ -1,0 +1,46 @@
+<app-return-button routerLink="/administrador" />
+
+<section class="section">
+  <header>
+    <h2 class="section__title">Cadastro de aluno</h2>
+    <p class="section__description">Preencha as informações do aluno</p>
+  </header>
+
+  <form class="form" [formGroup]="form" (submit)="onSubmit($event)">
+    <app-input
+      [control]="form.controls.studentName"
+      label="Nome completo"
+      placeholder="Digite o nome completo do aluno"
+    />
+    <app-input
+      [control]="form.controls.studentRG"
+      label="RG"
+      mask="00.000.000-0"
+      placeholder="xx.xxx.xxx-x"
+    />
+    <app-input
+      [control]="form.controls.enrollmentNumber"
+      label="Número da Matrícula"
+      mask="0*"
+      placeholder="Digite o número da matrícula"
+    />
+    <app-select
+      [control]="form.controls.studentClass"
+      [options]="options"
+      label="Turma"
+      placeholder="6º ano B"
+    />
+    <app-input
+      [control]="form.controls.guardianCPF"
+      label="CPF do responsável"
+      mask="000.000.000-00"
+      placeholder="123.456.789-00"
+    />
+    <app-button
+      [isLoading]="form.pending"
+      class="form__btn"
+      label="Cadastrar"
+      type="submit"
+    />
+  </form>
+</section>

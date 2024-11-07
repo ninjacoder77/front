@@ -1,0 +1,35 @@
+<!-- Mobile -->
+<div class="search search--mobile" [class.active]="toggleSearch">
+  <button
+    *ngIf="toggleSearch"
+    mat-icon-button
+    color="primary"
+    (click)="onSearch()"
+  >
+    <mat-icon>search</mat-icon>
+  </button>
+  <input
+    id="searchbar--mobile"
+    class="search__input"
+    placeholder="Buscar..."
+    [(ngModel)]="searchTerm"
+  />
+  <button *ngIf="toggleSearch" mat-icon-button (click)="closeSearchbar()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <button *ngIf="!toggleSearch" mat-icon-button (click)="openSearchbar()">
+    <mat-icon>search</mat-icon>
+  </button>
+</div>
+<!-- Desktop -->
+<div class="search search--desktop">
+  <input
+    id="searchbar--desktop"
+    class="search__input"
+    placeholder="Buscar..."
+    [(ngModel)]="searchTerm"
+  />
+  <button mat-icon-button color="primary" (click)="onSearch()">
+    <mat-icon>search</mat-icon>
+  </button>
+</div>

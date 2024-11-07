@@ -1,0 +1,30 @@
+@import "variables";
+
+.label {
+  background-color: $input-label-color;
+}
+
+.material-input__custom-placeholder::placeholder {
+  color: $input-placeholder-color !important;
+}
+
+.material-input__field {
+  width: 100%;
+
+  &:has(.material-input__error) {
+    .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+      .mdc-notched-outline__leading,
+    .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+      .mdc-notched-outline__trailing {
+      border-color: $error-color !important;
+    }
+  }
+
+  .material-input__error {
+    &,
+    &::placeholder {
+      color: $error-color !important;
+      opacity: 1;
+    }
+  }
+}

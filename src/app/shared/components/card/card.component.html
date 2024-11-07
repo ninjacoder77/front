@@ -1,0 +1,16 @@
+<mat-card class="card" appearance="outlined">
+  <mat-card-content>
+    <img
+      mat-card-image
+      class="card__image"
+      [src]="imageUrl"
+      [alt]="imageDescription"
+    />
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button class="card__button" [routerLink]="routeUrl">
+      {{ buttonLabel }}
+    </button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,41 @@
+<section class="section">
+  <header class="section__header">
+    <h2 class="section__title">Olá, administrador!</h2>
+    <p class="section__description">
+      Cadastre e gerencie estudantes, professores, turmas e disciplinas da sua
+      escola.
+    </p>
+  </header>
+
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit($event)">
+    <app-input
+      [control]="loginForm.controls.email"
+      [showErrors]="loginFailed"
+      autocomplete="email"
+      placeholder="Insira seu e-mail"
+      type="email"
+    />
+    <app-input
+      [control]="loginForm.controls.password"
+      [showErrors]="loginFailed"
+      autocomplete="current-password"
+      placeholder="Insira sua senha"
+      type="password"
+    />
+
+    <strong class="failed-message" *ngIf="loginForm.errors?.['unauthorized']"
+      >Seu e-mail ou senha estão incorretos.
+    </strong>
+
+    <strong class="failed-message" *ngIf="loginForm.errors?.['noConnection']"
+      >Verifique sua conexão e tente novamente.
+    </strong>
+
+    <strong class="failed-message" *ngIf="loginForm.errors?.['serverError']"
+      >Houve um problema no servidor.
+    </strong>
+
+    <app-button label="Entrar" type="submit" [isLoading]="loginForm.pending" />
+    <a color="primary" routerLink="/" mat-stroked-button>Voltar</a>
+  </form>
+</section>

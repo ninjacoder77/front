@@ -1,0 +1,23 @@
+<section class="section">
+  <header class="section__header">
+    <h2 class="section__title">Cadastro de informações sobre a escola</h2>
+    <p class="section__description">
+      Seja bem-vindo, administrador! Esta plataforma foi desenvolvida para
+      facilitar o gerenciamento completo da sua escola. Aqui, você pode
+      cadastrar turmas, alunos, professores e acompanhar o desempenho de cada
+      um. Além disso, é possível visualizar as informações já cadastradas
+      clicando no botão correspondente no menu. Selecione uma das opções abaixo
+      para começar a realizar novos cadastros ou consultar os dados existentes
+      de forma rápida e eficiente.
+    </p>
+  </header>
+
+  <button mat-flat-button class="section__button" (click)="openDialog()">
+    Ficou com alguma duvida? <strong>Clique aqui</strong>
+  </button>
+
+  <app-card
+    buttonLabel="Cadastrar aluno"
+    routeUrl="/administrador/cadastrar-aluno"
+  />
+</section>

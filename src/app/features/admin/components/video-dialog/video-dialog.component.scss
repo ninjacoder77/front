@@ -1,0 +1,23 @@
+@import "variables";
+
+.video {
+  position: relative;
+  height: 60vh;
+  width: 80vw;
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    height: 38rem;
+    width: 60rem;
+  }
+}
+
+.iframe {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-width: 0;
+}

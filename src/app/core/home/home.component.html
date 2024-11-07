@@ -1,0 +1,14 @@
+<app-image-action-panel
+  imageUrl="/assets/home-image.webp"
+  imageDescription="Um grupo de estudantes está sentado em círculo no gramado de um campo de futebol, com as mãos levantadas no ar. Seus rostos estão radiantes de alegria e empolgação. Todos estão vestidos com camisetas brancas com detalhes azuis. Ao fundo, há uma rede azul e um prédio com telhado vermelho, sugerindo que o local pode ser uma escola ou uma instalação recreativa. A imagem captura a energia jovem e a camaradagem dos alunos enquanto participam de uma atividade divertida e leve. O clima geral é otimista e alegre, ressaltando a alegria da juventude e da convivência."
+>
+  <p class="description">
+    Para acessar a plataforma, selecione o seu tipo de perfil.
+  </p>
+
+  <div panel>
+    <app-button routerLink="/auth/professor" label="Sou professor(a)" />
+    <app-button routerLink="/auth/responsavel" label="Sou responsável" />
+    <a class="link" routerLink="/auth/administrador">Sou administrador</a>
+  </div>
+</app-image-action-panel>

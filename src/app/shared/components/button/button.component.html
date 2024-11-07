@@ -1,0 +1,11 @@
+<button
+  mat-flat-button
+  [color]="color"
+  [disabled]="disabled || isLoading"
+  [type]="type"
+>
+  {{ label }}
+  <mat-icon *ngIf="isLoading">
+    <mat-spinner diameter="18"></mat-spinner>
+  </mat-icon>
+</button>
