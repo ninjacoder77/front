@@ -1,8 +1,5 @@
 <section class="section">
-  <div class="section__nav-container">
-    <app-return-button routerLink="/administrador" />
-    <app-breadcrumbs />
-  </div>
+  <app-breadcrumbs [showReturnButton]="true" returnUrl="/administrador" />
 
   <header class="section__header">
     <h2 class="section__title">{{ sectionTitle }}</h2>

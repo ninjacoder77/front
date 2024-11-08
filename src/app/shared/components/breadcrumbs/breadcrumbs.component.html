@@ -1,4 +1,5 @@
 <nav class="nav">
+  <app-return-button *ngIf="showReturnButton" [routerLink]="returnUrl" />
   <ng-container *ngFor="let breadcrumb of breadcrumbs; last as last">
     <ng-container *ngIf="!last">
       <a class="nav__link" [routerLink]="breadcrumb.url">

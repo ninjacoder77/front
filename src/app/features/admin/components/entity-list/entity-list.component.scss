@@ -10,17 +10,6 @@
     margin-block: 2rem;
   }
 
-  &__nav-container {
-    @include center-flex(column);
-    align-items: flex-start;
-    margin-block: 4rem;
-    gap: 1rem;
-
-    app-return-button {
-      margin-left: -1.5rem;
-    }
-  }
-
   &__title {
     text-wrap: nowrap;
     margin: 0;

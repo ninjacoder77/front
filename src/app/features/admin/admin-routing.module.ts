@@ -20,7 +20,7 @@ const routes: Routes = [
       {
         path: 'cadastrar-aluno',
         component: StudentRegistrationComponent,
-        data: { breadcrumbs: 'Cadastro de Aluno' },
+        data: { breadcrumbs: 'Cadastrar Aluno' },
       },
       {
         path: 'alunos',

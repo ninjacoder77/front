@@ -1,5 +1,5 @@
 // Libs
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 // Interfaces
 import { IBreadCrumbs } from '../../interfaces/IBreadCrumbs';
@@ -25,6 +25,18 @@ import { BreadcrumbsService } from '../../services/breadcrumbs.service';
   styleUrls: ['./breadcrumbs.component.scss'],
 })
 export class BreadcrumbsComponent implements OnInit {
+  /**
+   * Define se o botão de retorno deve ser exibido na interface.
+   *
+   * @defaultValue `false`
+   */
+  @Input() public showReturnButton = false;
+
+  /**
+   * URL para redirecionamento ao clicar no botão de retorno, se estiver visível na interface.
+   */
+  @Input() public returnUrl = '';
+
   /**
    * Array de itens de breadcrumbs.
    *
