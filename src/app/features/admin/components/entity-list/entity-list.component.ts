@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 
 // Services
 import { PaginationService } from 'src/app/shared/services/pagination.service';
+import { SnackbarService } from 'src/app/shared/services/snackbar.service';
 import { ActionMenuService } from '../../services/action-menu.service';
 import { EntityService } from '../../services/entity.service';
 
@@ -79,7 +80,8 @@ export class EntityListComponent<T> implements OnInit, OnDestroy {
     private _activatedRoute: ActivatedRoute,
     private _entityService: EntityService,
     private _paginationService: PaginationService,
-    private _router: Router
+    private _router: Router,
+    private _snackbarService: SnackbarService
   ) {}
 
   /**
@@ -146,9 +148,9 @@ export class EntityListComponent<T> implements OnInit, OnDestroy {
    */
   private _subscribeToEditEvent(): void {
     this._subscriptions.add(
-      this._actionMenuService.editEvent$.subscribe((id: number) => {
-        this._router.navigate([`administrador/editar/${this.endpoint}`, id]);
-      })
+      // this._actionMenuService.editEvent$.subscribe((id: number) => {
+      //   this._router.navigate([`administrador/editar/${this.endpoint}`, id]);
+      // })
     );
   }
 
@@ -162,7 +164,7 @@ export class EntityListComponent<T> implements OnInit, OnDestroy {
       this._actionMenuService.deleteEvent$.subscribe(async (id: number) => {
         try {
           await this._entityService.deleteEntity(id, this.endpoint);
-          // TODO: mostrar snackbar de sucesso
+          this._snackbarService.openSnackBar('Aluno excluído com sucesso.');
           this._getEntityPage();
         } catch (error) {
           console.error('Erro:', error);

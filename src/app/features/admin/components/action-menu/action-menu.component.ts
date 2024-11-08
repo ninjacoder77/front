@@ -45,9 +45,9 @@ export class ActionMenuComponent implements OnDestroy {
    *
    * Esta função emite um evento de edição para o item atual.
    */
-  public onEdit(): void {
-    this._actionMenuService.emitEdit(this.itemId);
-  }
+  // public onEdit(): void {
+  //   this._actionMenuService.emitEdit(this.itemId);
+  // }
 
   /**
    * onDelete

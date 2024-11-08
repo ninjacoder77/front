@@ -65,3 +65,25 @@
     }
   }
 }
+
+// TODO: mudar estilos globalmente ou criar um componente customizado para notificações
+::ng-deep .custom-snackbar {
+  border-radius: 1.2rem;
+  margin: 2.5rem 4.5rem !important;
+  white-space: pre-line;
+  width: 35rem;
+
+  .mat-mdc-simple-snack-bar {
+    flex-direction: column;
+    padding-block: 1.4rem;
+  }
+
+  .mdc-button__label {
+    color: #65558f;
+    padding: 1.4rem;
+  }
+
+  --mdc-snackbar-container-color: #f3edf7;
+  --mdc-snackbar-supporting-text-color: #65558f;
+  --mat-snack-bar-button-color: #00000043;
+}

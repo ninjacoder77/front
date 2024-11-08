@@ -17,7 +17,7 @@ export class SnackbarService {
   public openSnackBar(
     message: string,
     action?: string,
-    duration?: number
+    duration = 2000
   ): void {
     this._snackBar.open(message, action, {
       horizontalPosition: 'right',
