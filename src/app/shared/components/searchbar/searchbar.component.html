@@ -13,6 +13,7 @@
     class="search__input"
     placeholder="Buscar..."
     [(ngModel)]="searchTerm"
+    (keydown.enter)="onSearch()"
   />
   <button *ngIf="toggleSearch" mat-icon-button (click)="closeSearchbar()">
     <mat-icon>close</mat-icon>
@@ -28,6 +29,7 @@
     class="search__input"
     placeholder="Buscar..."
     [(ngModel)]="searchTerm"
+    (keydown.enter)="onSearch()"
   />
   <button mat-icon-button color="primary" (click)="onSearch()">
     <mat-icon>search</mat-icon>
